@@ -1,0 +1,117 @@
+:root {
+    --navbar-color: #9c27b0;
+}
+#navbar {
+    display: grid;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    grid-template-columns: 2fr 1fr;
+    background-color: var(--navbar-color);
+    z-index: 101;;
+}
+#navbar * {
+    color: white;
+}
+#site {
+    height: auto;
+    padding: 30px;
+    width: fit-content;
+}
+#site-name {
+    font-size: 2em;
+    margin: 0 !important;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    position: relative;
+}
+#nav-menu {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 1em;
+}
+#nav-menu-list {
+    display: flex;
+    list-style: none;
+    transition: 0.3s;
+    padding: 0px;
+    position: absolute;
+    flex-direction: column;
+    min-width: 40%;
+    background-color: var(--navbar-color);
+    text-align: center;
+    top: 15px;
+    right: 0px;
+    transform: translate(-3000px, 68px);
+    width: 100%;
+    color: ghostwhite;
+    
+}
+.nav-item {
+    padding: 15px;
+    cursor: pointer;
+    font-size: 25px;  
+    list-style: none;
+}
+#ham{
+    position: absolute;
+    top: 35px;
+    right: 30px;
+}
+.ham-img {
+    width: 30px;
+}
+.open {
+    transform: translate(0, 68px) !important;
+}
+.close {
+    transform: translate(-3000px, 68px) !important;
+}
+@media screen and (min-width: 576px) {
+    .navbar {
+        border: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 20px;
+    }
+
+    #nav-menu-list {
+        flex-direction: row;
+        background-color: unset;
+        text-align: center;
+        position: relative;
+        top: 5px !important;
+        right: 10px !important;
+        width: unset;
+        border: unset;
+        transform: translate(0px, 0px) !important;
+    }
+
+    #nav-item {
+        border: none;
+        padding: 0;
+    }
+
+    #ham {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    body {
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 1130px) {
+    
+}
+
+@media screen and (min-width: 1300px) {
+   
+}

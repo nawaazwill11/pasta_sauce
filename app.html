@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Pasta Sauce - A Work Interval Timer</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/nav.css">
+        <link rel="stylesheet" href="./css/app.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <nav id="navbar">
+            <div id="site">
+                <a id="site-name" href="/">Pasta Sauce</a>
+            </div>
+            <div id="nav-menu">
+                <ul id="nav-menu-list">
+                    <li id="nav-setting" class="nav-item">Settings</li>
+                    <li id="nav-about" class="nav-item">About</li>
+                </ul>
+            </div>
+            <div id="ham">
+                <img class="ham-img" src="./img/ham-white.svg" alt="x">
+            </div>
+        </nav>
+        <div id="container">
+            <div id="root">
+                <div id="frame">
+                    <div id="description">
+                        Work Time
+                    </div>
+                    <div id="timer">
+                        00:01
+                    </div>
+                    <div id="controls">
+                        <div class="control-item">
+                            <img src="./img/start.svg" alt="resume" class="start" title="Start">
+                        </div>
+                        <div class="control-item">
+                            <img src="./img/stop.svg" alt="stop" class="stop" title="Stop & Reset">
+                        </div>
+                    </div>
+                    <div id="skipper">
+                        <button id="skip">Skip to <span id="skip-text">Break</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="butter-paper"></div>
+        <div id="settings" class="overlay">
+            <div class="overlay-tab">
+                <div class="overlay-tab-title">
+                    <p>Settings</p>
+                </div>
+                <div class="rows">
+                    <div id="work-duration" class="row">
+                        <div class="left">Work duration:</div>
+                        <div class="right">
+                            <div class="timer-box">
+                                <div class="timer-box-left">
+                                    <input id="wm" class="timer-box-value" type="text" value="25" placeholder="00">
+                                </div>
+                                <div class="timer-box-separator">
+                                    :
+                                </div>
+                                <div class="timer-box-right">
+                                    <input id="ws" class="timer-box-value" type="text" value="00" placeholder="00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="break-duration" class="row">
+                        <div class="left">Break duration:</div>
+                        <div class="right">
+                            <div class="timer-box">
+                                <div class="timer-box-left">
+                                    <input id="bm" class="timer-box-value" type="text" value="05" placeholder="00">
+                                </div>
+                                <div class="timer-box-separator">
+                                    :
+                                </div>
+                                <div class="timer-box-right">
+                                    <input id="bs" class="timer-box-value" type="text" value="00" placeholder="00">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="operations" class="row row-button">
+                        <div class="operation">
+                            <button id="reset" class="operation-button">Reset</button>
+                        </div>
+                        <div id="save" class="operation">
+                            <button id="save" class="operation-button">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div id="settings">
+        <div id="about" class="overlay">
+            <div class="overlay-tab">
+                <div class="overlay-tab-title">
+                    <p>About</p>
+                </div>
+                <div class="rows">
+                    <div class="row">
+                        <img id="app-icon" src="./img/tomato-sauce.svg" alt="tomato-sauce">
+                    </div>
+                    <div class="row">
+                        <div class="left">
+                            <span title="App"><b>Pasta Sauce</b></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="left">
+                            <span title="Description">A Pomodoro App</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <span title="Version"> Ver. 1.0.0</span>
+                    </div>
+                    <div class="row">
+                        <div class="left">
+                            <span><b><a href="https://www.facebook.com/nawaazjames" target="_blank" rel="noreferrer" title="Creator">Nawaaz K.</a></b></span>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <script src="./js/nav.js" async defer></script>
+        <script src="./js/app.js" async defer></script>
+    </body>
+</html>
