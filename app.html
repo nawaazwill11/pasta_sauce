@@ -6,11 +6,20 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Pasta Sauce - A Work Interval Timer</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="#536878">
+        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+        <title>Pasta Sauce - A Work Interval Timer</title>
         <link rel="stylesheet" href="./css/nav.css">
         <link rel="stylesheet" href="./css/app.css">
+        <link rel="manifest" href="manifest.json">
+        <link rel="apple-touch-icon" href="./img/app-icon.svg">
+        <link href="https://fonts.googleapis.com/css?family=Courgette&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merienda+One&display=swap" rel="stylesheet">
+
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -110,7 +119,7 @@
                 </div>
                 <div class="rows">
                     <div class="row">
-                        <img id="app-icon" src="./img/tomato-sauce.svg" alt="tomato-sauce">
+                        <img id="app-icon" src="./img/app-icon.svg" alt="tomato-sauce">
                     </div>
                     <div class="row">
                         <div class="left">
@@ -133,7 +142,21 @@
                 </div>
             </div>   
         </div>
+        <div id="A2HS">
+            <button id="addhs">+</button>
+        </div>
         <script src="./js/nav.js" async defer></script>
         <script src="./js/app.js" async defer></script>
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('./service-worker.js')
+                    .then((reg) => {
+                        console.log('Service worker registered.');
+                    });
+                });
+            }
+        </script>
+        <script src="/js/install.js"></script>
     </body>
 </html>

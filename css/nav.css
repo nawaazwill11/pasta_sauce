@@ -16,11 +16,11 @@
 }
 #site {
     height: auto;
-    padding: 30px;
+    padding: 26px;
     width: fit-content;
 }
 #site-name {
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0 !important;
     text-decoration: none;
     color: white;
@@ -57,7 +57,7 @@
 }
 #ham{
     position: absolute;
-    top: 35px;
+    top: 28px;
     right: 30px;
 }
 .ham-img {
@@ -79,7 +79,9 @@
     body {
         font-size: 20px;
     }
-
+    #site {
+        padding: 22px;
+    }
     #nav-menu-list {
         flex-direction: row;
         background-color: unset;

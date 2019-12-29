@@ -1,0 +1,30 @@
+{
+  "name": "pasta_sauce",
+  "version": "1.0.0",
+  "description": "A Pomodoro App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nawaazwill11/pasta_sauce.git"
+  },
+  "keywords": [
+    "pastasauce",
+    "pomodoro",
+    "pwa"
+  ],
+  "author": "Nawaaz k",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nawaazwill11/pasta_sauce/issues"
+  },
+  "homepage": "https://github.com/nawaazwill11/pasta_sauce#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "finalhandler": "^1.1.2",
+    "router": "^1.3.3"
+  }
+}

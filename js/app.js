@@ -71,13 +71,13 @@ function toggleStart() {
 
 function runClock(flag) {
     if (!flag) return;
-    clock = setInterval(function() { // repeats per second
+    clock = setInterval(async function() { // repeats per second
         let time_var = timer.innerText.split(':'); // split minutes and seconds
         let minutes = Number(time_var[0]); // convert and assign string to number for processing
         let seconds = Number(time_var[1]); 
         if (seconds === 0) { // minute reduction when second value is zero
             if (minutes - 1 < 0) { // stop clock when minute value is zero
-                return timerEnd.bind(this)();
+                return await timerEnd();
             }
             minutes -= 1;
             seconds = 59;
@@ -93,21 +93,25 @@ function runClock(flag) {
 
 // stops timer, plays bell, next session continuation logic
 function timerEnd() {
-    sound.play();
-    toggleStart();
-    clearInterval(clock);
-    toggleSession();
-    setSession();
-    if (!settings.autoplay) {
-        if (!confirm('Start break session?')) {
-            return ;
+    new Promise((resolve, reject) => {
+        sound.play();
+        resolve();
+    })
+    .then(()=>{
+        toggleStart();
+        clearInterval(clock);
+        toggleSession();
+        setSession();
+        if (!settings.autoplay) {
+            if (!confirm('Start break session?')) {
+                return ;
+            }
         }
-    }
-    timer.innerText = settings.break.minutes + ':' + settings.break.seconds;
-    document.getElementById('description').innerText = 'Break Time'
-    // delays the timer start after break selection
-    setTimeout(function () { ctrl_1.click(); }, 500);
-
+        timer.innerText = settings.break.minutes + ':' + settings.break.seconds;
+        document.getElementById('description').innerText = 'Break Time'
+        // delays the timer start after break selection
+        setTimeout(function () { ctrl_1.click(); }, 500);
+    });       
 }
 
 // sets UI values based on current session
@@ -136,6 +140,17 @@ ctrl_1.onclick = function () {
 ctrl_2.onclick = function(event) {
     clearInterval(clock);
     allocateSettings(settings);
+    let element = ctrl_1.children[0]; // start / pause element
+    clearInterval(clock); // stop reducations
+    element.className = 'start'; 
+    element.src = './img/start.svg';
+}
+
+function halt() {
+    let element = ctrl_1.children[0]; // start / pause element
+    clearInterval(clock); // stop reducations
+    element.className = 'start'; 
+    element.src = './img/start.svg';
 }
 
 // skip to next session
@@ -146,8 +161,7 @@ skip.onclick = function (event) {
     let element = ctrl_1.children[0]; // start / pause element
     clearInterval(clock); // stop reducations
     element.className = 'pause'; 
-    element.src = './img/pause.svg';
-
+    element.src = './img/pause.svg'
     clearInterval(clock);
     toggleSession();
     setSession();
@@ -184,10 +198,9 @@ document.querySelectorAll('.overlay').forEach(element => {
 
 // validation on inputs
 const inputs = document.querySelectorAll('input');
-console.log(inputs);
 inputs.forEach(input => {
     input.onkeydown = function (e) {
-        if (!((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105) || e.keyCode == 8 || e.keyCode == 46)) {
+        if (!((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105) || e.keyCode == 8 || e.keyCode == 46) || (e.keyCode >= 37 && e.keyCode <= 40) || e.key == 9) {
             e.preventDefault();
         }
     }

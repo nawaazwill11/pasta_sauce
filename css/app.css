@@ -3,6 +3,9 @@ body {
     font-size: 16px;
     height: 100vh;
 }
+#navbar {
+    font-family: 'Merienda One', cursive;
+}
 #container {
     position: absolute;
     top: 0;
@@ -25,7 +28,7 @@ body {
     justify-content: center;
     width: 100%;
     margin-top: 40px;
-    font-size: 2em;
+    font-size: 2.3em;
     font-weight: bolder;
 }
 #timer {
@@ -38,7 +41,6 @@ body {
 }
 #controls {
     display: flex;
-    width: 200px;
     justify-content: space-evenly;
 }
 .control-item img {
@@ -47,7 +49,8 @@ body {
 }
 #skipper {
     display: flex;
-    margin-top: 20px;
+    position: relative;
+    top: 30px;
 }
 #skip {
     width: 100%;
@@ -57,6 +60,7 @@ body {
     background-color: #9c27b0;
     color: white;
     font-size: 1.2em;
+    font-family: 'Merienda One', cursive;
 }
 /* Settings */
 .overlay {
@@ -70,6 +74,7 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: 1000;
+    font-family: 'Merienda One', cursive;
 }
 .overlay-tab {
     background-color: white;
@@ -118,6 +123,7 @@ div.timer-box div {
     margin: 0 !important;
     background-color: inherit;
     border: none;
+    font-family: 'Merienda One', cursive;
 }
 .timer-box-separator {
     text-align: center;
@@ -132,6 +138,7 @@ div.timer-box div {
     border: none;
     color: white;
     border-radius: 3px;
+    font-family: 'Merienda One', cursive !important;
 }
 #reset {
     background-color: lightcoral;
@@ -141,4 +148,26 @@ div.timer-box div {
 }
 #app-icon {
     width: 50px;
+}
+#A2HS {
+    display: none;
+    position: absolute;
+    right: 15px;
+    bottom: 40px;
+}
+#addhs {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: none;
+    background-color: #9d52b0;
+    color: white;
+    font-size: 2em;
+}
+
+@media screen and (min-width: 768px) {
+    #A2HS {
+        right: 30px;
+        bottom: 50px;
+    }
 }
