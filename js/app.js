@@ -96,8 +96,8 @@ function timerEnd() {
     sound.play();
     toggleStart();
     clearInterval(clock);
-    toggleSession(session);
-    setSession(session);
+    toggleSession();
+    setSession();
     if (!settings.autoplay) {
         if (!confirm('Start break session?')) {
             return ;
@@ -111,7 +111,7 @@ function timerEnd() {
 }
 
 // sets UI values based on current session
-function setSession(session) {
+function setSession() {
     timer.innerText = settings[session].minutes + ':' + settings[session].seconds;
     session_text = session[0].toUpperCase() + session.slice(1,)
     description.innerText = session_text + ' ' + 'Time';
@@ -119,8 +119,8 @@ function setSession(session) {
 }
 
 // toggles session between work and break
-function toggleSession(ses) {
-    if(ses === 'work') {
+function toggleSession() {
+    if(session === 'work') {
         session = 'break';
     } else {
         session = 'work';
@@ -149,8 +149,8 @@ skip.onclick = function (event) {
     element.src = './img/pause.svg';
 
     clearInterval(clock);
-    toggleSession(session);
-    setSession(session);
+    toggleSession();
+    setSession();
     ctrl_1.click();
 }
 
