@@ -12,9 +12,12 @@ const template = {
 server.on('request', function (request, response){
     router(request, response, fh(request, response))
 });
-server.listen(process.env.PORT);
+// port
+let port = process.env.PORT || 8000
 
-console.log(process.env.PORT);
+server.listen(port);
+
+console.log(port);
 // Routing logic
 
 router.get('/', (request, response) => {
