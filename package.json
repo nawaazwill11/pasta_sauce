@@ -25,6 +25,6 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "finalhandler": "^1.1.2",
-    "router": "^1.3.3"
+    "router": "^2.0.0"
   }
 }
